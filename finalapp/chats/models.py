@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 class Chats(models.Model):
     message = models.ManyToManyField(
-        "message_detail.Message", blank = True
+        "message_details.Message", blank = True
     )
     owner = models.ManyToManyField("jwt_auth.User")
 
