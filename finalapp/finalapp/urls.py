@@ -15,7 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from django.urls.conf import include
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/posts/', include('posts.urls')),
+    path('api/posts/post_comments/', include('post_comments.urls')),
+    path('api/post_comments/', include('post_comments.urls')),
+    # path('api/chats/', include('chats.urls')),
+    path('api/chats/message_details/', include('message_details.urls')),
+    path('api/auth/', include('jwt_auth.urls')),
 ]
